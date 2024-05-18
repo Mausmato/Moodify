@@ -7,3 +7,9 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+.title {
+    align-items: center;
+    font-size: 6rem !important;
+    padding-bottom: 30px;
+}

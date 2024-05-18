@@ -10,7 +10,7 @@ const Home = () => {
       justify="center"
       className="home"
     >
-      <Heading align="center" size="9">
+      <Heading className='title'>
         Moodify
       </Heading>
       <Text>Music IS emotion.</Text>
