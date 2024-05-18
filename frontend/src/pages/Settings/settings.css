@@ -1,3 +1,4 @@
+/* settings.css */
 .heading-large {
   padding-top: 0px;
   font-size: 4rem !important;
@@ -8,30 +9,35 @@
 }
 
 .playlistcontainer {
-  margin-top: 60px; 
+  margin-top: 60px;
 }
 
 .container {
   margin-top: 120px;
 }
 
-.txt{
-  text-align: center;
-  width: 400px;
-  
+.txt {
+  text-align: left;
+  width: 500px;
+  display: flex;
+  align-items: center; /* Ensure vertical alignment */
 }
 
 .btn {
   text-align: right;
   max-width: 100px;
-
+  display: flex;
+  align-items: center; /* Ensure vertical alignment */
 }
 
 .slider {
   text-align: right;
   max-width: 200px;
+  display: flex;
+  align-items: center; /* Ensure vertical alignment */
 }
 
 .flex {
   align-self: center;
+  width: 100%; /* Ensure the flex container spans the full width */
 }
