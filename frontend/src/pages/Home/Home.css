@@ -1,21 +1,21 @@
 .home {
-    height: 70vh;
+  min-height: 70vh;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .title {
-    align-items: center;
-    font-size: 6rem !important;
-    padding-bottom: 30px;
+  align-items: center;
+  font-size: 6rem !important;
+  padding-bottom: 30px;
 }
 
 .getStarted {
-    border-radius: 40px !important;
-    margin-top: 30px !important;
-    width: 250px !important;
-    height: 80px !important;
+  border-radius: 40px !important;
+  margin-top: 30px !important;
+  width: 250px !important;
+  height: 80px !important;
 }

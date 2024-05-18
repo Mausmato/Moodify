@@ -1,23 +1,19 @@
-@import '@radix-ui/themes/styles.css';
+@import "@radix-ui/themes/styles.css";
 
 body,
 html {
-  overflow: hidden;
+  overflow: auto;
 }
 
 button {
-
-
-  --green: #1DB954;
+  --green: #1db954;
   --black: #191414;
   --black: #191414;
-  ;
-
-
   appearance: none;
   border: none;
   cursor: pointer;
-  background-color: #1DB954;
+  background-color: #1db954;
+  backdrop-filter: blur(50px);
   color: #fff;
   border-radius: 60px;
   outline: none;
@@ -45,7 +41,7 @@ button {
   background: linear-gradient(
     60deg,
     var(--black) 0%,
-    #1DB954 20%,
+    #1db954 20%,
     var(--black) 80%
   );
   z-index: 0;
@@ -63,13 +59,11 @@ button {
   right: 20px;
 
   background: var(--green);
-
 }
 
 .blush.black {
   left: 20px;
   background: var(--black);
-
 }
 
 .shapes .container {

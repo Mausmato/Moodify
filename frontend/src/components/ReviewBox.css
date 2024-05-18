@@ -1,0 +1,21 @@
+#box {
+  margin: 10px;
+  background-color: rgb(31, 31, 31);
+  color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+}
+
+#name {
+  margin: 10px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+#description {
+  font-size: 15px;
+  font-weight: normal;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
