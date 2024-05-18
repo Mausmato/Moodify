@@ -2,12 +2,7 @@ import React, { useState } from "react";
 import { Loading } from "./Loading";
 import { GithubLink } from "./GithubLink";
 
-type switchCameraProps = {
-  isModelLoaded: boolean,
-  setConstraints: Function,
-};
-
-const SwitchCamera = (props: switchCameraProps) => {
+const SwitchCamera = (isModelLoaded, setConstraints) => {
   const [devices, setDevices] = useState([]);
 
   const handleDevices = React.useCallback(
@@ -22,13 +17,13 @@ const SwitchCamera = (props: switchCameraProps) => {
 
   return (
     <div className="info">
-      {!props.isModelLoaded ? <Loading /> : <GithubLink />}
+      {!isModelLoaded ? <Loading /> : <GithubLink />}
       <div>
         <select className={"cameraSelector"}>
           {devices.map((device, key) => (
             <option
               key={device.deviceId}
-              onClick={() => props.setConstraints(device)}
+              onClick={() => setConstraints(device)}
             >
               {device.label || `Device ${key + 1}`}
             </option>

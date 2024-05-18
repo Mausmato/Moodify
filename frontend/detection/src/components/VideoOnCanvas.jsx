@@ -1,13 +1,13 @@
 import Webcam from "react-webcam";
 import React from "react";
 
-type videoOnCanvasProps = {
+type videoOnCanvasProp = {
   canvasRef: any,
   webcamRef: any,
   constraints: any,
 };
 
-const VideoOnCanvas = (props: videoOnCanvasProps) => (
+const VideoOnCanvas = (props: videoOnCanvasProp) => (
   <div>
     <canvas
       ref={props.canvasRef}

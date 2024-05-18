@@ -1,7 +1,10 @@
+// import ManageVideoOnCanvas from "../../../detection/src/components/ManageVideoOnCanvas";
+
 const Analyze = () => {
     return (
         <div>
-            analyze
+            {/* <ManageVideoOnCanvas/> */}
+            <h1>Analyze</h1>
         </div>
     )
 }
