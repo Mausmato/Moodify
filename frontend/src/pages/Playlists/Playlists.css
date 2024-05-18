@@ -8,3 +8,8 @@
   align-items: center;
   margin-top: 20px; 
 }
+
+.heading-large {
+  padding-top: 40px;
+  font-size: 4rem !important;
+}
