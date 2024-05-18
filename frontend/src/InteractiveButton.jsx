@@ -52,8 +52,8 @@ export default function App() {
             hover: { opacity: 1 }
           }}
         >
-          <div className="pink blush" />
-          <div className="blue blush" />
+          <div className="green blush" />
+          <div className="black blush" />
           <div className="container">
             <Suspense fallback={null}>
               <Shapes

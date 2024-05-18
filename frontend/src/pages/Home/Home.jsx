@@ -21,9 +21,13 @@ const Home = () => {
     >
       <Heading className="title">Moodify</Heading>
       <Text style={{ marginTop: "15px" }}>Music IS emotion.</Text>
-      <div style={{ marginTop: "20px" }}>
-        <InteractiveButton onClick={handleGetStartedClick} />
-      </div>
+   
+    {/* <Button onClick={handleGetStartedClick} className='getStarted'>Get Started</Button> */}
+
+  <div style={{ marginTop: "35px" }}>
+
+  <InteractiveButton onClick={handleGetStartedClick}/>
+  </div>
     </Flex>
   );
 };
