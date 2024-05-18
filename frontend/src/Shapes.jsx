@@ -28,7 +28,7 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
           }}
         >
           <HappyFace style={{ backgroundColor: "pink" }} />
-          <Cone style={{ backgroundColor: "pink" }} />
+          <MusicalNote style={{ backgroundColor: "pink" }} />
           <AngryFace style={{ backgroundColor: "red" }} />
           <SadFace style={{ backgroundColor: "pink" }} />
         </motion.group>
@@ -75,9 +75,29 @@ export function HappyFace() {
   );
 }
 
-export function Cone() {
+// export function Cone() {
+//   return (
+//     <motion.mesh
+//       position={[-0.8, 0.6, 0]}
+//       rotation={[-0.5, 0, -0.3]}
+//       variants={{
+//         hover: {
+//           z: 1.1,
+//           x: -1.5,
+//           rotateX: -0.2,
+//           rotateZ: 0.4,
+//         },
+//       }}
+//     >
+//       <coneGeometry args={[0.3, 0.6, 20]} />
+//       <Material />
+//     </motion.mesh>
+//   );
+// }
+
+function MusicalNote() {
   return (
-    <motion.mesh
+    <motion.group
       position={[-0.8, 0.6, 0]}
       rotation={[-0.5, 0, -0.3]}
       variants={{
@@ -89,9 +109,17 @@ export function Cone() {
         },
       }}
     >
-      <coneGeometry args={[0.3, 0.6, 20]} />
-      <Material />
-    </motion.mesh>
+      {/* Note head */}
+      <motion.mesh position={[0, 0, 0]}>
+        <sphereGeometry args={[0.3, 32, 32]} />
+        <meshPhongMaterial color="green" />
+      </motion.mesh>
+      {/* Note stem */}
+      <motion.mesh position={[0, 0.75, 0]} rotation={[0, 0, Math.PI / 4]}>
+        <cylinderGeometry args={[0.05, 0.05, 1.5, 32]} />
+        <meshPhongMaterial color="green" />
+      </motion.mesh>
+    </motion.group>
   );
 }
 
@@ -109,36 +137,17 @@ export function AngryFace() {
       }}
     >
       <sphereGeometry args={[0.4]} />
-      <meshPhongMaterial color="#98C379" specular="#61dafb" shininess={10} />
+      <meshPhongMaterial color="red" specular="#61dafb" shininess={10} />
     </motion.mesh>
   );
 }
 
-// export function Icosahedron() {
-//   return (
-//     <motion.mesh
-//       position={[1.1, 0, 0]}
-//       rotation-z={0.5}
-//       variants={{
-//         hover: {
-//           x: 1.8,
-//           z: 0.6,
-//           y: 0.6,
-//           rotateZ: -0.5
-//         }
-//       }}
-//     >
-//       <icosahedronGeometry args={[0.7, 0]} />
-//       <Material />
-//     </motion.mesh>
-//   );
-// }
 export function SadFace() {
   return (
-    <motion.mesh position={[0.7, -0.7, 0]} variants={{ hover: { z: 2 } }}>
+    <motion.mesh position={[1.3, -0.7, 0]} variants={{ hover: { z: 2 } }}>
       <sphereGeometry args={[0.4]} />
       {/* <Material /> */}
-      <meshPhongMaterial color="#98C379" specular="#61dafb" shininess={10} />
+      <meshPhongMaterial color="blue" specular="#61dafb" shininess={10} />
     </motion.mesh>
   );
 }

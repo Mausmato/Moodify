@@ -9,6 +9,7 @@ a {
 }
 
 .title {
+  margin-top: -120px;
   align-items: center;
   font-size: 8rem !important;
   padding-bottom: 30px;
