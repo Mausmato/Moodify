@@ -1,3 +1,5 @@
+@import '@radix-ui/themes/styles.css';
+
 body,
 html {
   overflow: hidden;
@@ -7,7 +9,6 @@ button {
   --purple: #1DB954;
   --pink: #191414;
   --blue: #191414;
-  ;
 
   appearance: none;
   border: none;
@@ -36,12 +37,6 @@ button {
   right: -1px;
   bottom: -1px;
   border-radius: 60px;
-  background: linear-gradient(
-    60deg,
-    var(--blue) 0%,
-    #1DB954 20%,
-    var(--pink) 80%
-  );
 }
 
 .blush {
@@ -54,12 +49,10 @@ button {
 
 .blush.pink {
   right: 20px;
-  background: var(--purple);
 }
 
 .blush.blue {
   left: 20px;
-  background: var(--blue);
 }
 
 .shapes .container {
@@ -104,7 +97,6 @@ button {
   top: 1px;
   bottom: 1px;
   width: 1px;
-  background-color: #35373f;
 }
 
 .current {
@@ -154,7 +146,6 @@ body {
   font-family: "Inter", Arial;
   justify-content: center;
   align-items: center;
-  background: #f4f5fa;
 }
 
 /* devanagari */

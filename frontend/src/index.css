@@ -11,16 +11,11 @@ body {
   box-sizing: border-box;
 }
 
-.theme {
-  background: none;
-}
-
 .navbar {
   margin: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .nav2 a {

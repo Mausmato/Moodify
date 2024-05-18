@@ -8,17 +8,16 @@ import { TabNav } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 import "./index.css"; // Import the CSS file
 
-
 function App() {
   return (
     <>
       <div className="navbar">
-        <TabNav.Root className="nav2">
+        <TabNav.Root className="nav-left">
           <TabNav.Link active>
             <Link to="/">Moodify</Link>
           </TabNav.Link>
         </TabNav.Root>
-        <TabNav.Root className="nav">
+        <TabNav.Root className="nav-right">
           <TabNav.Link>
             <Link to="/analyze">Analyze</Link>
           </TabNav.Link>

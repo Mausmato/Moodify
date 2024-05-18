@@ -52,7 +52,7 @@ const Playlists = () => {
         <iframe
           className="spotify-embed" // Apply the CSS class here
           src="https://open.spotify.com/embed/playlist/2HsrrjrXZZmHK2ASAVqX1Z?utm_source=generator&theme=0"
-          width="60%" // Set width to fill the container
+          width="600rem" // Set width to fill the container
           height="400"
           frameBorder="0"
           allowFullScreen=""
