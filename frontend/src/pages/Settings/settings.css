@@ -23,6 +23,13 @@
   align-items: center; /* Ensure vertical alignment */
 }
 
+.txt1 {
+  text-align: left;
+  width: 536px;
+  display: flex;
+  align-items: center; /* Ensure vertical alignment */
+}
+
 .btn {
   text-align: right;
   max-width: 100px;

@@ -65,7 +65,7 @@ const Settings = () => {
         direction="row"
         className="flex"
         >
-          <label className="txt">Playlist Length</label>
+          <label className="txt1">Playlist Length</label>
           <Slider className='slider' defaultValue={[50]} />
           </Flex>
       </div>
