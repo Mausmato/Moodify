@@ -4,6 +4,7 @@ import { Heading, Button, Flex, Text } from "@radix-ui/themes";
 import "./Home.css";
 import InteractiveButton from "../../InteractiveButton.jsx"; // Adjust the path as needed
 import { Link } from "react-router-dom";
+import ReviewsList from "../../components/ReviewsList.jsx";
 
 const Home = () => {
   // const navigate = useNavigate();
@@ -27,6 +28,7 @@ const Home = () => {
           <InteractiveButton onTapStart={() => handleGetStartedClick} />
         </Link>
       </div>
+      <ReviewsList />
     </Flex>
   );
 };
