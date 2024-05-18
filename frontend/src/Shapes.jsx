@@ -109,7 +109,7 @@ export function AngryFace() {
       }}
     >
       <sphereGeometry args={[0.4]} />
-      <meshPhongMaterial color="red" specular="#61dafb" shininess={10} />
+      <meshPhongMaterial color="#98C379" specular="#61dafb" shininess={10} />
     </motion.mesh>
   );
 }
@@ -135,10 +135,10 @@ export function AngryFace() {
 // }
 export function SadFace() {
   return (
-    <motion.mesh position={[1.3, -0.7, 0]} variants={{ hover: { z: 2 } }}>
+    <motion.mesh position={[0.7, -0.7, 0]} variants={{ hover: { z: 2 } }}>
       <sphereGeometry args={[0.4]} />
       {/* <Material /> */}
-      <meshPhongMaterial color="blue" specular="#61dafb" shininess={10} />
+      <meshPhongMaterial color="#98C379" specular="#61dafb" shininess={10} />
     </motion.mesh>
   );
 }
