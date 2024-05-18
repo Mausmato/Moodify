@@ -30,11 +30,27 @@ const Playlists = () => {
       direction="column"
       align="center"
       justify="center"
-      className="settings"
+      className="settings playlists-container" // Apply the CSS class here
     >
       <Heading align="center" className="heading-large">
         {displayedText}
       </Heading>
+      <iframe
+        className="spotify-embed" // Apply the CSS class here
+        src="https://open.spotify.com/embed/playlist/2HsrrjrXZZmHK2ASAVqX1Z?utm_source=generator&theme=0"
+        width="45%"
+        height="400"
+        frameBorder="0"
+        allowFullScreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+      ></iframe>
+      <Flex gap="4" justify="center">
+        {" "}
+        {/* Flex container for the first row of buttons */}
+        <Button className="bt1">Open in Spotify</Button>
+        <Button className="bt1">Delete Playlist from Library</Button>
+      </Flex>
     </Flex>
   );
 };
