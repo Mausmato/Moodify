@@ -30,7 +30,7 @@ const Settings = () => {
         {displayedText}
       </Heading>
       {/* Playlist Preferences */}
-      <div className="container">
+      <div className="playlistcontainer">
         <Flex gap="8" direction="row" className="flex">
           <label className="txt">Make Playlists Public</label>
           <Switch className="btn" defaultChecked />
@@ -48,7 +48,7 @@ const Settings = () => {
           <Slider className="slider" defaultValue={[50]} />
         </Flex>
       </div>
-      <div className="container">
+      <div className="playlistcontainer">
         <Flex gap="8" direction="row" className="flex">
           <label className="txt">Allow Camera</label>
           <Switch className="btn" defaultChecked />

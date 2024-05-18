@@ -1,9 +1,11 @@
 #reviews-container {
-  position: relative;
-  width: fit-content;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.review-text {
+#reviews-title {
+  font-size: 30px;
   font-family: "Poppins";
   font-weight: bolder;
 }
