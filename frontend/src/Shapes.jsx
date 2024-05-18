@@ -98,7 +98,7 @@ export function Cone() {
 export function AngryFace() {
   return (
     <motion.mesh
-      position={[1.1, 0.4, 0]}
+      position={[1.3, 0.4, 0]}
       rotation={[-0.5, 0.5, 0]}
       variants={{
         hover: {
