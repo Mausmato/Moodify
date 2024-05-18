@@ -8,7 +8,6 @@ const Analyze = () => {
     <div id="analyze-container" style={{overflow:'none'}}>
       <ManageVideoOnCanvas/>
       <Button 
-        onClick={Generate()}
         size="4"
         id="spotify-button"
       >
