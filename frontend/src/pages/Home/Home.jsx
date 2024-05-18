@@ -1,6 +1,5 @@
 import './Home.css'
 import { Heading, Button, Flex, Text } from '@radix-ui/themes';
-
 const Home = () => {
   return (
     <Flex
@@ -19,4 +18,4 @@ const Home = () => {
   );
 };
 
-export default Home
+export default Home;
