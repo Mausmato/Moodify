@@ -6,9 +6,9 @@ export default defineConfig({
   plugins: [react()],
 });
 
-const serverConfig = {
-  fs: {
-    cachedChecks: false
-  }
-};
+// const serverConfig = {
+//   fs: {
+//     cachedChecks: false
+//   }
+// };
 

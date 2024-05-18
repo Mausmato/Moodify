@@ -2,7 +2,7 @@ import FaceDetection from "@mediapipe/face_detection";
 import { Camera } from "@mediapipe/camera_utils";
 import { URL_JS_DELIVR } from "./url.constant";
 
-const locateFaceDetectionFile = (file: string): string =>
+const locateFaceDetectionFile = (file) =>
   `${URL_JS_DELIVR}${file}`;
 
 const FACE_DETECTION_PROPS = {

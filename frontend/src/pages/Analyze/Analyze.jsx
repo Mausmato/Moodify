@@ -1,9 +1,9 @@
-// import ManageVideoOnCanvas from "../../../detection/src/components/ManageVideoOnCanvas";
+import ManageVideoOnCanvas from "../../../detection/src/components/ManageVideoOnCanvas";
 
 const Analyze = () => {
     return (
         <div>
-            {/* <ManageVideoOnCanvas/> */}
+            <ManageVideoOnCanvas/>
             <h1>Analyze</h1>
         </div>
     )

@@ -1,6 +1,6 @@
 import * as tf from "@tensorflow/tfjs";
 
-const loadModel = async (link: string, setState: Function, state) => {
+const loadModel = async (link, setState, state) => {
   console.log("loading model...");
   try {
     setState({

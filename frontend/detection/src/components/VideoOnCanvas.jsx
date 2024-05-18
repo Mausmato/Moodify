@@ -1,16 +1,10 @@
 import Webcam from "react-webcam";
 import React from "react";
 
-type videoOnCanvasProp = {
-  canvasRef: any,
-  webcamRef: any,
-  constraints: any,
-};
-
-const VideoOnCanvas = (props: videoOnCanvasProp) => (
+const VideoOnCanvas = ({ canvasRef, webcamRef, constraints }) => (
   <div>
     <canvas
-      ref={props.canvasRef}
+      ref={canvasRef}
       width={1920}
       height={1080}
       style={{ objectFit: "cover" }}
@@ -21,10 +15,11 @@ const VideoOnCanvas = (props: videoOnCanvasProp) => (
       width={1920}
       height={1080}
       mirrored={true}
-      ref={props.webcamRef}
-      videoConstraints={props.constraints}
+      ref={webcamRef}
+      videoConstraints={constraints}
       style={{ display: "none" }}
     />
   </div>
 );
+
 export default VideoOnCanvas;
