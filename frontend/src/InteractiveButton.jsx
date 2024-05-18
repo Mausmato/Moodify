@@ -19,6 +19,7 @@ export default function App() {
 
   return (
     <MotionConfig transition={transition}>
+      <a href="/analyze"></a>
       <motion.button
         ref={ref}
         initial={false}
@@ -27,7 +28,7 @@ export default function App() {
         variants={{
           rest: { scale: 1 },
           hover: { scale: 1.5 },
-          press: { scale: 1.4 }
+          press: { scale: 1.4 },
         }}
         onHoverStart={() => {
           resetMousePosition();
@@ -49,7 +50,7 @@ export default function App() {
           className="shapes"
           variants={{
             rest: { opacity: 0 },
-            hover: { opacity: 1 }
+            hover: { opacity: 1 },
           }}
         >
           <div className="green blush" />

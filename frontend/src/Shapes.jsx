@@ -24,12 +24,12 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
           animate={isHover ? "hover" : "rest"}
           dispose={null}
           variants={{
-            hover: { z: isPress ? -0.9 : 0 }
+            hover: { z: isPress ? -0.9 : 0 },
           }}
         >
           <HappyFace style={{ backgroundColor: "pink" }} />
           <Cone style={{ backgroundColor: "pink" }} />
-          <Torus style={{ backgroundColor: "pink" }} />
+          <AngryFace style={{ backgroundColor: "red" }} />
           <SadFace style={{ backgroundColor: "pink" }} />
         </motion.group>
       </MotionConfig>
@@ -40,34 +40,34 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
 export function Lights() {
   return (
     <>
-      {/* <ambientLight intensity={0.5} /> */}
+      <ambientLight intensity={0.5} />
       <spotLight color="#61dafb" position={[-10, -15, -10]} intensity={0.2} />
       <spotLight color="#61dafb" position={[-10, -5, 15]} intensity={0.8} />
       <spotLight color="#61dafb" position={[-5, 15, 2]} intensity={0.5} />
       <spotLight color="#f2056f" position={[15, 5, -2]} intensity={2} />
       <spotLight color="#f2056f" position={[15, 5, 5]} intensity={1} />
       <spotLight color="#b107db" position={[5, -15, 5]} intensity={0.8} />
-    
-      <spotLight color="#ffffff" position={[0, 0, 5]} intensity={8} />
-      
+
+      <spotLight color="#ffffff" position={[0, 0, 5]} intensity={4} />
+
       {/* Top Light */}
-      <spotLight color="#ffffff" position={[0, 10, 0]} intensity={5} />
-      
+      <spotLight color="#ffffff" position={[0, 10, 0]} intensity={2.5} />
+
       {/* Left Side Light */}
-      <spotLight color="#ffffff" position={[-10, 0, 0]} intensity={3} />
-      
+      <spotLight color="#ffffff" position={[-10, 0, 0]} intensity={1.5} />
+
       {/* Right Side Light */}
-      <spotLight color="#ffffff" position={[10, 0, 0]} intensity={3} />
-      
+      <spotLight color="#ffffff" position={[10, 0, 0]} intensity={1.5} />
+
       {/* Back Light */}
-      <spotLight color="#ffffff" position={[0, 0, -5]} intensity={2} />
+      <spotLight color="#ffffff" position={[0, 0, -5]} intensity={1} />
     </>
   );
 }
 
 export function HappyFace() {
   return (
-    <motion.mesh position={[-0.6, -0.6, 0]} variants={{ hover: { z: 2 } }}>
+    <motion.mesh position={[-0.2, -0.8, 0]} variants={{ hover: { z: 2 } }}>
       <sphereGeometry args={[0.4]} />
       {/* <Material /> */}
       <meshPhongMaterial color="green" specular="#61dafb" shininess={10} />
@@ -78,15 +78,15 @@ export function HappyFace() {
 export function Cone() {
   return (
     <motion.mesh
-      position={[-0.8, 0.4, 0]}
+      position={[-0.8, 0.6, 0]}
       rotation={[-0.5, 0, -0.3]}
       variants={{
         hover: {
           z: 1.1,
           x: -1.5,
           rotateX: -0.2,
-          rotateZ: 0.4
-        }
+          rotateZ: 0.4,
+        },
       }}
     >
       <coneGeometry args={[0.3, 0.6, 20]} />
@@ -95,21 +95,21 @@ export function Cone() {
   );
 }
 
-export function Torus() {
+export function AngryFace() {
   return (
     <motion.mesh
-      position={[0.1, 0.4, 0]}
+      position={[1.1, 0.4, 0]}
       rotation={[-0.5, 0.5, 0]}
       variants={{
         hover: {
           y: 0.5,
           z: 2,
-          rotateY: -0.2
-        }
+          rotateY: -0.2,
+        },
       }}
     >
-      <torusGeometry args={[0.2, 0.1, 10, 50]} />
-      <Material />
+      <sphereGeometry args={[0.4]} />
+      <meshPhongMaterial color="red" specular="#61dafb" shininess={10} />
     </motion.mesh>
   );
 }
@@ -135,7 +135,7 @@ export function Torus() {
 // }
 export function SadFace() {
   return (
-    <motion.mesh position={[1.3, 0, 0]} variants={{ hover: { z: 2 } }}>
+    <motion.mesh position={[1.3, -0.7, 0]} variants={{ hover: { z: 2 } }}>
       <sphereGeometry args={[0.4]} />
       {/* <Material /> */}
       <meshPhongMaterial color="blue" specular="#61dafb" shininess={10} />

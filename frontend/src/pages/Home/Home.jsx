@@ -1,15 +1,16 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { Heading, Button, Flex, Text } from "@radix-ui/themes";
 import "./Home.css";
 import InteractiveButton from "../../InteractiveButton.jsx"; // Adjust the path as needed
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleGetStartedClick = () => {
-    navigate("/analyze");
-  };
+  // const handleGetStartedClick = () => {
+  //   navigate("/analyze");
+  // };
 
   return (
     <Flex
@@ -21,13 +22,11 @@ const Home = () => {
     >
       <Heading className="title">Moodify</Heading>
       <Text style={{ marginTop: "15px" }}>Music IS emotion.</Text>
-   
-    {/* <Button onClick={handleGetStartedClick} className='getStarted'>Get Started</Button> */}
-
-  <div style={{ marginTop: "35px" }}>
-
-  <InteractiveButton onClick={handleGetStartedClick}/>
-  </div>
+      <div style={{ marginTop: "20px" }}>
+        <Link to="/analyze">
+          <InteractiveButton onTapStart={() => handleGetStartedClick} />
+        </Link>
+      </div>
     </Flex>
   );
 };
