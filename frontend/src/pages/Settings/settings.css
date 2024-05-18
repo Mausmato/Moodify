@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 .switch-container {
   margin-top: 60px; 
@@ -8,3 +9,54 @@
   align-items: center;
   margin-top: 20px; 
 }
+=======
+/* settings.css */
+.heading-large {
+  padding-top: 0px;
+  font-size: 4rem !important;
+}
+
+.settings {
+  text-align: center;
+}
+
+.playlistcontainer {
+  margin-top: 60px;
+}
+
+.container {
+  margin-top: 120px;
+}
+
+.txt {
+  text-align: left;
+  width: 500px;
+  display: flex;
+  align-items: center; /* Ensure vertical alignment */
+}
+.txtS {
+  text-align: left;
+  width: 536px;
+  display: flex;
+  align-items: center; /* Ensure vertical alignment */
+}
+
+.btn {
+  text-align: right;
+  max-width: 100px;
+  display: flex;
+  align-items: center; /* Ensure vertical alignment */
+}
+
+.slider {
+  text-align: right;
+  max-width: 200px;
+  display: flex;
+  align-items: center; /* Ensure vertical alignment */
+}
+
+.flex {
+  align-self: center;
+  width: 100%; /* Ensure the flex container spans the full width */
+}
+>>>>>>> Stashed changes
