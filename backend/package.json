@@ -4,10 +4,13 @@
   "description": "moodify",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon app.js",
+    "client": "npm run start --prefix ../frontend",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "proxy": "http://localhost:3000",
+  "proxy": "http://localhost:3000/",
   "dependencies": {
     "axios": "^1.6.8",
     "body-parser": "^1.20.2",
