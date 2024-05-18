@@ -1,13 +1,14 @@
-import Home from './pages/Home/Home'
-import Analyze from './pages/Analyze/Analyze'
-import Playlists from './pages/Playlists/Playlists'
-import Settings from './pages/Settings/Settings'
-import { Routes, Route } from 'react-router-dom'
-import { TabNav } from '@radix-ui/themes'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Analyze from "./pages/Analyze/Analyze";
+import Playlists from "./pages/Playlists/Playlists";
+import Settings from "./pages/Settings/Settings";
+import { TabNav } from "@radix-ui/themes";
+import { Link } from "react-router-dom";
+import "./index.css"; // Import the CSS file
 
 function App() {
-
   return (
     <>
       <div className="navbar">
@@ -29,13 +30,13 @@ function App() {
         </TabNav.Root>
       </div>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/analyze' element={<Analyze />} />
-        <Route path='/playlists' element={<Playlists />} />
-        <Route path='/settings' element={<Settings />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/analyze" element={<Analyze />} />
+        <Route path="/playlists" element={<Playlists />} />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

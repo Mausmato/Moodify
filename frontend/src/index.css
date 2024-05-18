@@ -22,3 +22,13 @@ body {
   justify-content: space-between;
 
 }
+
+.nav2 a {
+  text-decoration: none;
+}
+
+.nav2 a:hover {
+
+  transition: all 0.3s ease;
+    color: #30A46C; /* color on hover */
+}

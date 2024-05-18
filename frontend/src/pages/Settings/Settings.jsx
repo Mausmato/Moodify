@@ -1,9 +1,24 @@
-const Settings = () => {
-    return (
-        <div>
-            settings
-        </div>
-    )
-}
+import { Heading, Button, Flex, Text, Switch } from "@radix-ui/themes";
+import './settings.css'
 
-export default Settings
+const Settings = () => {
+  return (
+    <Flex
+      gap="4"
+      direction="column"
+      align="center"
+      justify="center"
+      className="settings"
+    >
+      <Heading align="center" size="8">
+        Settings
+      </Heading>
+      <div className="switch-container">
+        <label>Activity</label>
+        <Switch defaultChecked />
+      </div>
+    </Flex>
+  );
+};
+
+export default Settings;
