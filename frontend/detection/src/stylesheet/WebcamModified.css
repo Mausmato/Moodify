@@ -2,13 +2,9 @@ body {
     margin: 0;
 }
 
-.canvas {
-    position: fixed;
-    height: 80vh;
-    width: 80vw;
-    left: 50%;
-    top: 60%;
-    transform: translate(-50%, -50%);
+canvas{
+    overflow: none !important;
+    margin-top: 50px;
 }
 
 .info {

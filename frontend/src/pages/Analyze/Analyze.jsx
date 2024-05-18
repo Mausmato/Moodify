@@ -5,12 +5,12 @@ import { MagicWandIcon } from '@radix-ui/react-icons'
 
 const Analyze = () => {
   return (
-    <div>
-      <ManageVideoOnCanvas />
-      {/* <h1>Analyze</h1> */}
-      <Button
+    <div id="analyze-container" style={{overflow:'none'}}>
+      <ManageVideoOnCanvas/>
+      <Button 
+        onClick={Generate()}
         size="4"
-        className="spotify-button"
+        id="spotify-button"
       >
         <MagicWandIcon />
         Generate Playlists

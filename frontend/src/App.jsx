@@ -7,6 +7,7 @@ import Settings from "./pages/Settings/Settings.jsx";
 import { TabNav } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 import "./index.css"; // Import the CSS file
+import Logo from "./MoodifyLogo.png"
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <div className="navbar">
         <TabNav.Root className="nav-left">
           <TabNav.Link active>
-            <Link to="/">Moodify</Link>
+            <a href="/"><img src={Logo}/></a>
+            {/* <Link to="/">Moodify</Link> */}
           </TabNav.Link>
         </TabNav.Root>
         <TabNav.Root className="nav-right">

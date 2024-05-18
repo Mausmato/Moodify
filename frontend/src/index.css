@@ -9,10 +9,11 @@ body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .navbar {
-  width: calc(100vw - 8em);
+  width: calc(105vw - 8em);
   padding-left: 4rem;
   margin-top: 2rem;
   display: flex;

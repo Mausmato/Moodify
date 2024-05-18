@@ -1,5 +1,13 @@
-.spotify-button {
-    position: absolute !important;
-    right: 0 !important;
+#analyze-container{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: none !important;
+}
+
+#spotify-button {
     z-index: 10 !important;
+    margin-top: 60%;
+    position: absolute;
 }
