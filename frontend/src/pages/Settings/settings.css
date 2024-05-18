@@ -1,10 +1,37 @@
+.heading-large {
+  padding-top: 0px;
+  font-size: 4rem !important;
+}
 
-.switch-container {
+.settings {
+  text-align: center;
+}
+
+.playlistcontainer {
   margin-top: 60px; 
 }
 
-.switch-label-container {
-  display: flex;
-  align-items: center;
-  margin-top: 20px; 
+.container {
+  margin-top: 120px;
+}
+
+.txt{
+  text-align: center;
+  width: 400px;
+  
+}
+
+.btn {
+  text-align: right;
+  max-width: 100px;
+
+}
+
+.slider {
+  text-align: right;
+  max-width: 200px;
+}
+
+.flex {
+  align-self: center;
 }
