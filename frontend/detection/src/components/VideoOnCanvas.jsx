@@ -5,15 +5,13 @@ const VideoOnCanvas = ({ canvasRef, webcamRef, constraints }) => (
   <div>
     <canvas
       ref={canvasRef}
-      width={1920}
-      height={1080}
-      style={{ objectFit: "cover" }}
+      width={1100}
+      height={700}
+      style={{ objectFit: "cover"}}
       className="canvas"
     />
     <Webcam
       audio={false}
-      width={1920}
-      height={1080}
       mirrored={true}
       ref={webcamRef}
       videoConstraints={constraints}
