@@ -12,7 +12,9 @@ body {
 }
 
 .navbar {
-  margin: 2rem;
+  width: calc(100vw - 8em);
+  padding-left: 4rem;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,10 +24,23 @@ body {
   text-decoration: none;
 }
 
+.radix-themes:where([data-has-background='true']) {
+    background-color: #0f0f0f00;
+}
+
+.nav-right{
+
+  margin-left: 200px;
+
+}
 .nav2 a:hover {
 
   transition: all 0.3s ease;
     color: #30A46C; /* color on hover */
+}
+
+.container {
+  padding-left: 15.3rem;
 }
 
 .slide-in {

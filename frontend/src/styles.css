@@ -58,12 +58,12 @@ button {
 .blush.green {
   right: 20px;
 
-  background: var(--green);
+  /* background: var(--green); */
 }
 
 .blush.black {
   left: 20px;
-  background: var(--black);
+  /* background: var(--black); */
 }
 
 .shapes .container {
@@ -87,6 +87,7 @@ button {
   padding: 20px 0;
   transform: translateZ(0);
   font-weight: 700;
+  font-size: 3rem;
   z-index: 1;
 }
 
@@ -112,7 +113,7 @@ button {
 
 .current {
   color: #8a8d9b;
-  opacity: 1;
+  opacity: 0;
   display: block;
 }
 

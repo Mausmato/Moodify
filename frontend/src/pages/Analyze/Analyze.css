@@ -1,0 +1,5 @@
+.spotify-button {
+    position: absolute !important;
+    right: 0 !important;
+    z-index: 10 !important;
+}

@@ -24,7 +24,7 @@ const ReviewsList = () => {
   };
 
   return (
-    <div className="container" id="reviews-container">
+    <div className="" id="reviews-container">
       <h2 className="review-text">See what our users have to say</h2>
       <div className="row justify-content-md-center">
         {reviews.slice(0, visibleReviews).map((review, index) => review)}
