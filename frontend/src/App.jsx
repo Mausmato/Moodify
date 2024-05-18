@@ -1,12 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home/Home";
-import Analyze from "./pages/Analyze/Analyze";
-import Playlists from "./pages/Playlists/Playlists";
-import Settings from "./pages/Settings/Settings";
+import Home from "./pages/Home/Home.jsx";
+import Analyze from "./pages/Analyze/Analyze.jsx";
+import Playlists from "./pages/Playlists/Playlists.jsx";
+import Settings from "./pages/Settings/Settings.jsx";
 import { TabNav } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 import "./index.css"; // Import the CSS file
+
 
 function App() {
   return (

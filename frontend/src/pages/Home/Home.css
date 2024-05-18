@@ -13,3 +13,10 @@ a {
     font-size: 6rem !important;
     padding-bottom: 30px;
 }
+
+.getStarted {
+    border-radius: 40px !important;
+    margin-top: 30px !important;
+    width: 250px !important;
+    height: 80px !important;
+}
