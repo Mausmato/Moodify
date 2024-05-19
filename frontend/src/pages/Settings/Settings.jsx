@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Heading, Button, Flex, Text, Switch, Slider } from "@radix-ui/themes";
 import { motion } from "framer-motion"; // Import motion from framer-motion
+import SelectOption from "./Select";
 
 import "./settings.css";
 
@@ -51,16 +52,21 @@ const Settings = () => {
             <Switch className="btn" defaultUnchecked />
           </Flex>
         </div>
-        <div className="playlistcontainer2">
-          <Flex gap="8" direction="row" className="flex">
-            <label className="txt">Clear All Playlists</label>
-            <Switch className="btn" defaultUnchecked />
+        <div className="playlistcontainer">
+          <Flex gap="2" direction="row" className="flex">
+            <label className="txt">Preferred Genre</label>
+            <SelectOption />
           </Flex>
         </div>
         <div className="playlistcontainer">
           <Flex gap="8" direction="row" className="flex">
             <label className="txt"> 𝓕𝓻𝓮𝓪𝓴𝔂 𝓜𝓸𝓭𝓮 😈</label>
             <Switch className="btn" defaultUnchecked />
+          </Flex>
+        </div>
+        <div className="deletebutton">
+          <Flex gap="8" direction="row" className="flex">
+            <Button size="4" variant="surface" color="red" radius="none">Clear All Playlists<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8536 2.85355C13.0488 2.65829 13.0488 2.34171 12.8536 2.14645C12.6583 1.95118 12.3417 1.95118 12.1464 2.14645L7.5 6.79289L2.85355 2.14645C2.65829 1.95118 2.34171 1.95118 2.14645 2.14645C1.95118 2.34171 1.95118 2.65829 2.14645 2.85355L6.79289 7.5L2.14645 12.1464C1.95118 12.3417 1.95118 12.6583 2.14645 12.8536C2.34171 13.0488 2.65829 13.0488 2.85355 12.8536L7.5 8.20711L12.1464 12.8536C12.3417 13.0488 12.6583 13.0488 12.8536 12.8536C13.0488 12.6583 13.0488 12.3417 12.8536 12.1464L8.20711 7.5L12.8536 2.85355Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg></Button>
           </Flex>
         </div>
       </Flex>
