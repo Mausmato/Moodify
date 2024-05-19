@@ -1,19 +1,33 @@
 require('dotenv').config();
 const express = require('express');
 const SpotifyWebApi = require('spotify-web-api-node');
+const querystring = require('querystring');
 
 const clientID = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
+const redirect_uri = 'YOUR_REDIRECT_URI'; // Set your redirect URI here
 
 const spotifyApi = new SpotifyWebApi({
   clientId: clientID,
   clientSecret: clientSecret,
+  redirectUri: redirect_uri
 });
 
-var app = express();
+const app = express();
+
+let accessToken = '';
+
+function generateRandomString(length) {
+  var text = '';
+  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+  for (var i = 0; i < length; i++) {
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  }
+  return text;
+}
 
 app.get('/login', function(req, res) {
-
   var state = generateRandomString(16);
   var scope = 'user-read-private user-read-email';
 
@@ -27,33 +41,37 @@ app.get('/login', function(req, res) {
     }));
 });
 
-app.get('/callback', function(req, res) {
+app.get('/callback', async function(req, res) {
+  var code = req.query.code || null;
+  var state = req.query.state || null;
 
-    var code = req.query.code || null;
-    var state = req.query.state || null;
-  
-    if (state === null) {
+  if (state === null) {
+    res.redirect('/#' +
+      querystring.stringify({
+        error: 'state_mismatch'
+      }));
+  } else {
+    try {
+      const data = await spotifyApi.authorizationCodeGrant(code);
+      accessToken = data.body['access_token'];
+      const refresh_token = data.body['refresh_token'];
+
+      spotifyApi.setAccessToken(accessToken);
+      spotifyApi.setRefreshToken(refresh_token);
+
       res.redirect('/#' +
         querystring.stringify({
-          error: 'state_mismatch'
+          access_token: accessToken,
+          refresh_token: refresh_token
         }));
-    } else {
-      var authOptions = {
-        url: 'https://accounts.spotify.com/api/token',
-        form: {
-          code: code,
-          redirect_uri: redirect_uri,
-          grant_type: 'authorization_code'
-        },
-        headers: {
-          'content-type': 'application/x-www-form-urlencoded',
-          'Authorization': 'Basic ' + (new Buffer.from(clientID + ':' + clientSecret).toString('base64'))
-        },
-        json: true
-      };
+    } catch (error) {
+      res.redirect('/#' +
+        querystring.stringify({
+          error: 'invalid_token'
+        }));
     }
-  });
-
+  }
+});
 
 function getEmotionValenceArousal(emotion, percentage) {
   const emotions = {
@@ -79,31 +97,43 @@ function getEmotionValenceArousal(emotion, percentage) {
   };
 }
 
-  numTracks = 20
-  emotion = "😄 happy"
-  percentage = 80
+const numTracks = 20;
+const emotion = "😄 happy";
+const percentage = 80;
 
+async function getRecommendations() {
+  const { valence, arousal } = getEmotionValenceArousal(emotion, percentage);
 
-
-  async function main() {
-  
+  try {
+    const response = await fetch(`https://api.spotify.com/v1/recommendations?${querystring.stringify({
+      limit: numTracks,
+      target_valence: valence,
+      target_energy: arousal // Spotify uses 'target_energy' instead of 'target_arousal'
+    })}`, {
+      headers: {
+        Authorization: 'Bearer ' + access_token
+      }
+    });
     
-    const { valence, arousal } = getEmotionValenceArousal(emotion, percentage);
-  
-    try {
-      const response = await fetch('https://api.spotify.com/v1/recommendations', {
-        headers: {
-          Authorization: 'Bearer ' + access_token
-        },
-        limit: {numTracks},
-        target_valence: {valence},
-        target_arousal: {arousal},
-      });
-      const playlist = response.json();
-      console.log(playlist);
-    } catch (error) {
-      console.error('Error:', error);
-    }
+    const playlist = await response.json();
+    return playlist;
+  } catch (error) {
+    console.error('Error:', error);
+    return { error: 'Failed to fetch recommendations' };
   }
+}
 
-  main();
+async function main() {
+  const recommendations = await getRecommendations();
+  console.log(recommendations)
+}
+
+app.get('/recommendations', async (req, res) => {
+  const recommendations = await getRecommendations();
+  console.log(recommendations)
+  res.json(recommendations);
+});
+
+app.listen(3000, function() {
+  console.log('Example app listening on port 3000!');
+});
