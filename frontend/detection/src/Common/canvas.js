@@ -6,8 +6,8 @@ import {
 } from "../Constants/canvas.constant";
 
 const _setRectStyle = (context) => {
-  context.lineWidth = "0.8";
-  context.strokeStyle = "red";
+  context.lineWidth = "3";
+  context.strokeStyle = "white";
 };
 
 const _drawRect = (context, boundingBox) => {
