@@ -67,7 +67,7 @@ export function Lights() {
 
 export function HappyFace() {
   return (
-    <motion.mesh position={[-0.2, -0.8, 0]} variants={{ hover: { z: 2 } }}>
+    <motion.mesh position={[-0.5, -0.5, 0]} variants={{ hover: { z: 2, y: -0.5 } }}>
       <sphereGeometry args={[0.4]} />
       {/* <Material /> */}
       <meshPhongMaterial color="green" specular="#61dafb" shininess={10} />
@@ -104,6 +104,7 @@ function MusicalNote() {
         hover: {
           z: 1.1,
           x: -1.5,
+          y:2,
           rotateX: -0.2,
           rotateZ: 0.4,
         },
@@ -130,7 +131,7 @@ export function AngryFace() {
       rotation={[-0.5, 0.5, 0]}
       variants={{
         hover: {
-          y: 0.5,
+          y: 1,
           z: 2,
           rotateY: -0.2,
         },
@@ -144,7 +145,7 @@ export function AngryFace() {
 
 export function SadFace() {
   return (
-    <motion.mesh position={[1.3, -0.7, 0]} variants={{ hover: { z: 2 } }}>
+    <motion.mesh position={[1.3, -0.7, 0]} variants={{ hover: { z: 2, y: -0.8 } }}>
       <sphereGeometry args={[0.4]} />
       {/* <Material /> */}
       <meshPhongMaterial color="blue" specular="#61dafb" shininess={10} />
@@ -191,7 +192,7 @@ function Camera({ mouseX, mouseY, ...props }) {
     <motion.perspectiveCamera
       ref={cameraRef}
       fov={90}
-      position={[cameraX, cameraY, 3.8]}
+      position={[cameraX, cameraY, 4]}
     />
   );
 }

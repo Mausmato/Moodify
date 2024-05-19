@@ -27,8 +27,8 @@ export default function App() {
         whileTap="press"
         variants={{
           rest: { scale: 1 },
-          hover: { scale: 1.5 },
-          press: { scale: 1.4 },
+          hover: { scale: 1.2 },
+          press: { scale: 1.1 },
         }}
         onHoverStart={() => {
           resetMousePosition();
@@ -43,7 +43,7 @@ export default function App() {
         onTapCancel={() => setIsPress(false)}
         onPointerMove={(e) => {
           mouseX.set(e.clientX - bounds.x - bounds.width / 2);
-          mouseY.set(e.clientY - bounds.y - bounds.height / 2);
+          mouseY.set(e.clientY - bounds.y + bounds.height / 2);
         }}
       >
         <motion.div

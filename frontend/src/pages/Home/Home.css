@@ -1,5 +1,5 @@
 .home {
-  margin-top: 150px;
+  margin-top: 40vh;
   min-height: 70vh;
 }
 
@@ -13,6 +13,16 @@ a {
   align-items: center;
   font-size: 8rem !important;
   padding-bottom: 30px;
+}
+
+#emphasis {
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: #30A46C;
+}
+
+#dot-emphasis {
+  color: #30A46C;
 }
 
 .getStarted {
