@@ -3,6 +3,8 @@ import * as tf from "@tensorflow/tfjs";
 import magnifyResults from "./magnifyResults";
 import { treatImg } from "./tensorflowImages";
 
+let prediction = "";
+
 const _predictTensor = (state, model, tfResizedImage) => {
   if (state.isModelSet) {
     let predict = Array.from(model.predict(tfResizedImage).dataSync());
@@ -16,18 +18,19 @@ const _predictImg = (emotionRecognizer, state, face) =>
   _predictTensor(state, emotionRecognizer, treatImg(face));
 
 const predict = (emotionRecognizer, state, face) => {
-  let prediction = "";
   tf.engine().startScope();
   tf.tidy(() => {
     prediction = _predictImg(emotionRecognizer, state, face);
   });
   // Check tensor memory leak stop
   tf.engine().endScope();
-  return prediction;
+  return(prediction);
 };
 
+export { predict, prediction };
+
 const sendPrediction = (p) => {
-  const data = {p}
+  const data = { p }
   const options = {
     method: 'POST',
     headers: {
@@ -49,6 +52,5 @@ const sendPrediction = (p) => {
         console.log('Response:', responseData);
   })
 };
-
-export { predict };
 export default sendPrediction;
+
