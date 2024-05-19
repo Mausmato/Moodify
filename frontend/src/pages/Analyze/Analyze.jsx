@@ -10,7 +10,7 @@ const Analyze = () => {
     <div id="analyze-container" style={{overflow:'none'}}>
       <ManageVideoOnCanvas/>
       <Button 
-        onClick={sendPrediction("happy")}
+        onClick={() => sendPrediction('happy')}
         size="4"
         id="spotify-button"
       >

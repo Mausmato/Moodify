@@ -26,8 +26,8 @@ const predict = (emotionRecognizer, state, face) => {
   return prediction;
 };
 
-const sendPrediction = (prediction) => {
-  const data = prediction
+const sendPrediction = (p) => {
+  const data = {p}
   const options = {
     method: 'POST',
     headers: {
@@ -35,6 +35,7 @@ const sendPrediction = (prediction) => {
     },
     body: JSON.stringify(data),
   };
+  console.log('here is data!!!!', data)
 
   fetch('http://localhost:4000/mood',options)
 
