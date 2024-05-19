@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Heading, Button, Flex, Text, Switch, Slider } from "@radix-ui/themes";
+import { useState, useEffect } from "react";
+import { Heading, Flex, Switch } from "@radix-ui/themes";
 import { motion } from "framer-motion"; // Import motion from framer-motion
 
 import "./settings.css";

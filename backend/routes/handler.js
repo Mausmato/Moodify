@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
+// const { insertData } = require('../mongo');
 
 router.post('/mood', (req, res) => {
     const { p } = req.body;
     if (typeof p === 'string') {
         const parts = p.split(' ');
-        const emotion = parts[1].toLowerCase();  // Ensure emotion is lowercase for comparison
+        const emotion = parts[1].toLowerCase();
 
         let embedUrl = '';
 
-        if (emotion === 'happy' || emotion === 'surprised') {
+        if (emotion === 'happy' || emotion === 'glorious') {
             const happyPlaylists = [
                 'https://open.spotify.com/embed/playlist/7GhawGpb43Ctkq3PRP1fOL',
                 'https://open.spotify.com/embed/playlist/0PzKm1C0ti5msFNWcHvXV1',
@@ -70,7 +71,7 @@ router.post('/mood', (req, res) => {
         }
 
         if (embedUrl) {
-            res.send(`
+            res.json(`
                 <iframe style="border-radius:12px" src="${embedUrl}" width="600rem" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             `);
         } else {
