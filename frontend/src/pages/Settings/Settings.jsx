@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Heading, Button, Flex, Text, Switch, Slider } from "@radix-ui/themes";
+import { motion } from "framer-motion"; // Import motion from framer-motion
+
 import "./settings.css";
 
 const Settings = () => {
@@ -25,36 +27,44 @@ const Settings = () => {
   }, [displayedText, isTyping]);
 
   return (
-    <Flex direction="column" align="center" justify="center">
-      <Heading align="center" className="heading-large">
-        {displayedText}
-      </Heading>
-      {/* Playlist Preferences */}
-      <div className="playlistcontainer">
-        <Flex gap="8" direction="row" className="flex">
-          <label className="txt">Make Playlists Public</label>
-          <Switch className="btn" defaultChecked />
-        </Flex>
-      </div>
-      <div className="playlistcontainer">
-        <Flex gap="8" direction="row" className="flex">
-          <label className="txt">Automatically save playlists to Spotify</label>
-          <Switch className="btn" defaultChecked={false} />
-        </Flex>
-      </div>
-      <div className="playlistcontainer">
-        <Flex gap="8" direction="row" className="flex">
-          <label className="txt1">Playlist Length</label>
-          <Slider className="slider" defaultValue={[50]} />
-        </Flex>
-      </div>
-      <div className="playlistcontainer">
-        <Flex gap="8" direction="row" className="flex">
-          <label className="txt">Allow Camera</label>
-          <Switch className="btn" defaultChecked />
-        </Flex>
-      </div>
-    </Flex>
+    <motion.div // Wrap the content with motion.div for scroll transitions
+      className="settings playlists-container" // Apply the CSS class here
+      initial={{ scaleY: 0 }} // Initial state
+      animate={{ scaleY: 1 }} // Animation when component is present
+      exit={{ scaleY: 0 }} // Animation when component is removed
+      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} // Transition configuration
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100%",
+      }} // Centering styles
+    >
+      <Flex direction="column" align="center" justify="center">
+        <Heading align="center" className="heading-large">
+          {displayedText}
+        </Heading>
+        {/* Playlist Preferences */}
+        <div className="playlistcontainer">
+          <Flex gap="8" direction="row" className="flex">
+            <label className="txt">Allow Camera</label>
+            <Switch className="btn" defaultUnchecked />
+          </Flex>
+        </div>
+        <div className="playlistcontainer2">
+          <Flex gap="8" direction="row" className="flex">
+            <label className="txt">Clear All Playlists</label>
+            <Switch className="btn" defaultUnchecked />
+          </Flex>
+        </div>
+        <div className="playlistcontainer">
+          <Flex gap="8" direction="row" className="flex">
+            <label className="txt"> 𝓕𝓻𝓮𝓪𝓴𝔂 𝓜𝓸𝓭𝓮 😈</label>
+            <Switch className="btn" defaultUnchecked />
+          </Flex>
+        </div>
+      </Flex>
+    </motion.div>
   );
 };
 
