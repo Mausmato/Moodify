@@ -1,4 +1,4 @@
-import {MongoClient} from 'mongodb';
+const { MongoClient } = require('mongodb');
 
 const url = process.env.MONGO_KEY;
 const client = new MongoClient(url);
@@ -23,4 +23,4 @@ async function closeMongo(){
     }
 }
 
-export{connectToMongo, closeMongo}
+module.exports = { connectToMongo, closeMongo };

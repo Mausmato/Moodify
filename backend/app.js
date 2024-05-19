@@ -1,4 +1,4 @@
-import{connectToMongo, closeMongo} from './Mongo';
+const { connectToMongo, closeMongo } = require('./mongo');
 
 const express = require('express');
 const cors = require('cors');
