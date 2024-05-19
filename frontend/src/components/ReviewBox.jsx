@@ -8,7 +8,7 @@ const ReviewBox = ({ name = "name", description = "description..." }) => {
       id="box"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9 }}
+      transition={{ duration: 0.1 }}
     >
       <div className="row" id="name">
         {name}
