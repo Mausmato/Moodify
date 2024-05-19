@@ -30,6 +30,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
+    "express": "^4.19.2",
     "framer-motion": "^11.2.4",
     "framer-motion-3d": "^11.2.4",
     "ramda": "^0.28.0",

@@ -64,3 +64,13 @@ body {
   transform-origin: top;
 
 }
+
+
+.login-link{
+  color: #1CB955;
+  padding: 15px;
+}
+
+.login-link a:hover {
+  color: #0f8e4a; /* Darker color when hovering */
+}

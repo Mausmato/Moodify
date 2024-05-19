@@ -1,13 +1,23 @@
-#analyze-container{
+#analyze-container {
     width: 100vw;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: none !important;
+    position: relative;
+}
+
+.video-container {
+    width: 70%; /* Adjust as needed */
+    height: 90%; /* Reset height */
+    padding-top: 0%; /* Makes it a square */
+    position: relative;
+    overflow: hidden;
+    
 }
 
 #spotify-button {
-    z-index: 10 !important;
-    margin-top: 60%;
-    position: absolute;
+    z-index: 10;
+    margin-top: 20px; /* Adjust the margin as needed */
 }
