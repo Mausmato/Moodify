@@ -27,9 +27,6 @@ function App() {
           <TabNav.Link>
             <Link to="/playlists">Playlists</Link>
           </TabNav.Link>
-          <TabNav.Link>
-            <Link to="/settings">Settings</Link>
-          </TabNav.Link>
         </TabNav.Root>
       </div>
       <Routes>
