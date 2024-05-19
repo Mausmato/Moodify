@@ -1,4 +1,5 @@
 const { MongoClient } = require('mongodb');
+require("dotenv").config();
 
 const url = process.env.MONGO_KEY;
 const client = new MongoClient(url);
@@ -23,4 +24,17 @@ async function closeMongo(){
     }
 }
 
-module.exports = { connectToMongo, closeMongo };
+async function insertData(collectionName, data) {
+    const db = await connectToMongo();
+    const collection = db.collection(collectionName);
+    try {
+        const result = await collection.insertOne(data);
+        console.log(`Successfully inserted item with _id: ${result.insertedId}`);
+    } catch (e) {
+        console.error("Error inserting data", e);
+        throw e;
+    } 
+}
+
+
+module.exports = { connectToMongo, closeMongo, insertData };
