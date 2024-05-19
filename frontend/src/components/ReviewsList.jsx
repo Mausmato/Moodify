@@ -9,7 +9,7 @@ const ReviewsList = () => {
   const reviews = [];
   boxes.forEach((element) => {
     reviews.push(
-      <ReviewBox name={element.name} description={element.description} />
+      <ReviewBox name={element.name} description={element.description} key={`${element.name}123`}/>
     );
   });
 
