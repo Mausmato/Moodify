@@ -1,9 +1,14 @@
 require('dotenv').config();
 const express = require('express');
-
+const SpotifyWebApi = require('spotify-web-api-node');
 
 const clientID = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
+
+const spotifyApi = new SpotifyWebApi({
+  clientId: clientID,
+  clientSecret: clientSecret,
+});
 
 var app = express();
 
@@ -15,7 +20,7 @@ app.get('/login', function(req, res) {
   res.redirect('https://accounts.spotify.com/authorize?' +
     querystring.stringify({
       response_type: 'code',
-      client_id: client_id,
+      client_id: clientID,
       scope: scope,
       redirect_uri: redirect_uri,
       state: state
@@ -42,30 +47,13 @@ app.get('/callback', function(req, res) {
         },
         headers: {
           'content-type': 'application/x-www-form-urlencoded',
-          'Authorization': 'Basic ' + (new Buffer.from(client_id + ':' + client_secret).toString('base64'))
+          'Authorization': 'Basic ' + (new Buffer.from(clientID + ':' + clientSecret).toString('base64'))
         },
         json: true
       };
     }
   });
 
-async function getAccessToken(clientId, clientSecret) {
-  const response = await fetch('https://accounts.spotify.com/api/token', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
-    },
-    body: 'grant_type=client_credentials'
-  });
-
-  if (!response.ok) {
-    throw new Error('Failed to get access token');
-  }
-
-  const data = await response.json();
-  return data.access_token;
-}
 
 function getEmotionValenceArousal(emotion, percentage) {
   const emotions = {
@@ -91,30 +79,31 @@ function getEmotionValenceArousal(emotion, percentage) {
   };
 }
 
-  async function searchTracksByEmotionAndPreferences(emotion, percentage, accessToken) {
-    
-    const {valence, arousal} = getEmotionalValenceArousal(emotion, percentage)
-  
-    const response = await fetch(`https://api.spotify.com/v1/recommendations?seed_genres=${genre}&limit=20`, {
-      headers: { 'Authorization': 'Bearer ' + accessToken }
-    });
-    const data = await response.json();
-    return data.tracks;
-  }
   numTracks = 20
   emotion = "😄 happy"
   percentage = 80
 
+
+
   async function main() {
   
     
-    const { valence, arousal } = getEmotionalValenceArousal(emotion, percentage);
+    const { valence, arousal } = getEmotionValenceArousal(emotion, percentage);
   
     try {
-      const accessToken = await getAccessToken(clientId, clientSecret);
-      const playlist = await getSpotifyRecommendations(numTracks, arousal, valence, accessToken);
+      const response = await fetch('https://api.spotify.com/v1/recommendations', {
+        headers: {
+          Authorization: 'Bearer ' + access_token
+        },
+        limit: {numTracks},
+        target_valence: {valence},
+        target_arousal: {arousal},
+      });
+      const playlist = response.json();
       console.log(playlist);
     } catch (error) {
       console.error('Error:', error);
     }
   }
+
+  main();
