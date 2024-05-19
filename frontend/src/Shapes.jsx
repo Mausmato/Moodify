@@ -27,10 +27,10 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
             hover: { z: isPress ? -0.9 : 0 },
           }}
         >
-          <HappyFace style={{ backgroundColor: "pink" }} />
-          <MusicalNote style={{ backgroundColor: "pink" }} />
-          <AngryFace style={{ backgroundColor: "red" }} />
-          <SadFace style={{ backgroundColor: "pink" }} />
+          <Sphere />
+          <Cone />
+          <Torus />
+          <Icosahedron />
         </motion.group>
       </MotionConfig>
     </Canvas>
@@ -40,121 +40,93 @@ export function Shapes({ isHover, isPress, mouseX, mouseY }) {
 export function Lights() {
   return (
     <>
-      <ambientLight intensity={0.5} />
-      <spotLight color="#61dafb" position={[-10, -15, -10]} intensity={0.2} />
-      <spotLight color="#61dafb" position={[-10, -5, 15]} intensity={0.8} />
-      <spotLight color="#61dafb" position={[-5, 15, 2]} intensity={0.5} />
-      <spotLight color="#f2056f" position={[15, 5, -2]} intensity={2} />
-      <spotLight color="#f2056f" position={[15, 5, 5]} intensity={1} />
-      <spotLight color="#b107db" position={[5, -15, 5]} intensity={0.8} />
-
-      <spotLight color="#ffffff" position={[0, 0, 5]} intensity={4} />
-
-      {/* Top Light */}
-      <spotLight color="#ffffff" position={[0, 10, 0]} intensity={2.5} />
-
-      {/* Left Side Light */}
-      <spotLight color="#ffffff" position={[-10, 0, 0]} intensity={1.5} />
-
-      {/* Right Side Light */}
-      <spotLight color="#ffffff" position={[10, 0, 0]} intensity={1.5} />
-
-      {/* Back Light */}
-      <spotLight color="#ffffff" position={[0, 0, -5]} intensity={1} />
+      <ambientLight
+        color="#A5E075"
+        position={[-10, -10, -10]}
+        intensity={0.5}
+      />
+      <spotLight color="#DE4B35" position={[-10, -10, -10]} intensity={0.2} />
+      <spotLight color="#DE4B35" position={[-10, 0, 15]} intensity={0.8} />
+      <spotLight color="#DE4B35" position={[-5, 20, 2]} intensity={0.5} />
+      <spotLight color="#000000" position={[15, 10, -2]} intensity={2} />
+      <spotLight color="#DE4B35" position={[15, 10, 5]} intensity={1} />
+      <spotLight color="#000000" position={[5, -10, 5]} intensity={0.8} />
     </>
   );
 }
 
-export function HappyFace() {
+export function Sphere() {
   return (
-    <motion.mesh position={[-0.5, -0.5, 0]} variants={{ hover: { z: 2, y: -0.5 } }}>
+    <motion.mesh position={[-0.5, -0.5, 0]} variants={{ hover: { z: 2 } }}>
       <sphereGeometry args={[0.4]} />
-      {/* <Material /> */}
-      <meshPhongMaterial color="green" specular="#61dafb" shininess={10} />
+      <Material />
     </motion.mesh>
   );
 }
 
-// export function Cone() {
-//   return (
-//     <motion.mesh
-//       position={[-0.8, 0.6, 0]}
-//       rotation={[-0.5, 0, -0.3]}
-//       variants={{
-//         hover: {
-//           z: 1.1,
-//           x: -1.5,
-//           rotateX: -0.2,
-//           rotateZ: 0.4,
-//         },
-//       }}
-//     >
-//       <coneGeometry args={[0.3, 0.6, 20]} />
-//       <Material />
-//     </motion.mesh>
-//   );
-// }
-
-function MusicalNote() {
+export function Cone() {
   return (
-    <motion.group
-      position={[-0.8, 0.6, 0]}
+    <motion.mesh
+      position={[-0.8, 0.4, 0]}
       rotation={[-0.5, 0, -0.3]}
       variants={{
         hover: {
           z: 1.1,
           x: -1.5,
-          y:2,
           rotateX: -0.2,
           rotateZ: 0.4,
         },
       }}
     >
-      {/* Note head */}
-      <motion.mesh position={[0, 0, 0]}>
-        <sphereGeometry args={[0.3, 32, 32]} />
-        <meshPhongMaterial color="green" />
-      </motion.mesh>
-      {/* Note stem */}
-      <motion.mesh position={[0, 0.75, 0]} rotation={[0, 0, Math.PI / 4]}>
-        <cylinderGeometry args={[0.05, 0.05, 1.5, 32]} />
-        <meshPhongMaterial color="green" />
-      </motion.mesh>
-    </motion.group>
+      <coneGeometry args={[0.3, 0.6, 20]} />
+      <Material />
+    </motion.mesh>
   );
 }
 
-export function AngryFace() {
+export function Torus() {
   return (
     <motion.mesh
-      position={[1.3, 0.4, 0]}
+      position={[0.1, 0.4, 0]}
       rotation={[-0.5, 0.5, 0]}
       variants={{
         hover: {
-          y: 1,
+          y: 0.5,
           z: 2,
           rotateY: -0.2,
         },
       }}
     >
-      <sphereGeometry args={[0.4]} />
-      <meshPhongMaterial color="red" specular="#61dafb" shininess={10} />
+      <torusGeometry args={[0.2, 0.1, 10, 50]} />
+      <Material />
     </motion.mesh>
   );
 }
 
-export function SadFace() {
+export function Icosahedron() {
   return (
-    <motion.mesh position={[1.3, -0.7, 0]} variants={{ hover: { z: 2, y: -0.8 } }}>
-      <sphereGeometry args={[0.4]} />
-      {/* <Material /> */}
-      <meshPhongMaterial color="blue" specular="#61dafb" shininess={10} />
+    <motion.mesh
+      position={[1.1, 0, 0]}
+      rotation-z={0.5}
+      variants={{
+        hover: {
+          x: 1.8,
+          z: 0.6,
+          y: 0.6,
+          rotateZ: -0.5,
+        },
+      }}
+    >
+      <icosahedronGeometry args={[0.7, 0]} />
+      <Material />
     </motion.mesh>
   );
 }
 
 export function Material() {
-  return <meshPhongMaterial color="#fff" specular="#61dafb" shininess={10} />;
+  return (
+    <meshPhongMaterial color="#178B41" specular="#DE4B35" shininess={10} />
+  );
 }
 
 // Adapted from https://github.com/pmndrs/drei/blob/master/src/core/PerspectiveCamera.tsx
@@ -192,7 +164,7 @@ function Camera({ mouseX, mouseY, ...props }) {
     <motion.perspectiveCamera
       ref={cameraRef}
       fov={90}
-      position={[cameraX, cameraY, 4]}
+      position={[cameraX, cameraY, 3.8]}
     />
   );
 }

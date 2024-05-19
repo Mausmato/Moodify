@@ -24,8 +24,13 @@ const ReviewsList = () => {
   };
 
   return (
-    <div className="col " id="reviews-container">
-      <div className="row justify-content-md-center" id="reviews-title">See what our users have to say</div>
+    <div className="col" id="reviews-container">
+      <div className="row justify-content-md-center" id="reviews-title">
+        What our Customers are Saying
+      </div>
+      <div className="row justify-content-md-center" id="reviews-titlee">
+        &darr;
+      </div>
       <div className="row justify-content-md-center">
         {reviews.slice(0, visibleReviews).map((review, index) => review)}
       </div>
