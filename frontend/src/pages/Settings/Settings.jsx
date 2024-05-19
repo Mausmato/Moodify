@@ -53,8 +53,8 @@ const Settings = () => {
         </div>
         <div className="playlistcontainer2">
           <Flex gap="8" direction="row" className="flex">
-            <label className="txt">Clear All Playlists</label>
-            <Switch className="btn" defaultUnchecked />
+            <label className="clrtxt">Clear All Playlists</label>
+            <Switch className="bbtn" defaultUnchecked />
           </Flex>
         </div>
         <div className="playlistcontainer">

@@ -21,16 +21,43 @@ a {
 
 
 .spotify-embed {
-  margin-top: 60px;
+  margin-top: 30px;
   border-radius: 15px;
 }
 
+.mainbtn{
+  margin-top: 40px;
+}
+
 .bt1 {
+  margin-top: 20px !important;
   font-weight: bold !important; 
   margin-bottom: 20px !important;
+  background-color: #1CB955 !important;
+  padding: 10px;
+  transition: padding 0.3s ease !important;
 }
+
+.bt1:hover {
+  /* Increase padding on hover */
+  padding-left: 17px !important; /* Ensure the hover style is applied */
+  padding-right: 17px !important; /* Ensure the hover style is applied */
+}
+
 
 .spotify-embed {
   border-color:#30A46C; /* color on hover */
   border-width: 2px;
+}
+
+.mainbtn {
+  /* Set initial padding */
+  padding: 10px !important;
+  /* Apply transition for smooth animation */
+  transition: padding 0.3s ease !important;
+}
+
+.mainbtn:hover {
+  /* Increase padding on hover */
+  padding: 20px !important;
 }

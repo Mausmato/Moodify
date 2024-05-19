@@ -30,9 +30,6 @@ function App() {
           <TabNav.Link>
             <Link to="/settings">Settings</Link>
           </TabNav.Link>
-          <TabNav.Link className="login-link">
-            <a href="https://google.com/">Login</a>
-          </TabNav.Link>
         </TabNav.Root>
       </div>
       <Routes>

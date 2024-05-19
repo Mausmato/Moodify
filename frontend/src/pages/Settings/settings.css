@@ -70,9 +70,12 @@
   padding-bottom: 15px;
   padding-left: 15px;
   padding-right: 15px;
+  cursor: pointer;
+
   border-radius: 15px;
 }
 .playlistcontainer2 {
+  cursor: pointer;
   transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, 
               padding-bottom 0.3s ease-in-out, padding-left 0.3s ease-in-out, 
               padding-right 0.3s ease-in-out, border-radius 0.3s ease-in-out;
@@ -85,8 +88,22 @@
   padding-left: 15px;
   padding-right: 15px;
   border-radius: 15px;
+  cursor: pointer;
 }
 
+.clrtxt{
+  text-align: center !important;
+  width: 500px;
+  display: flex;
+  align-items: center; /* Ensure vertical alignment */  
+  cursor: pointer;
+}
+
+.clrtxt:hover {
+  cursor: pointer;
+  border: 10px !important;
+  border-color: white !important;
+}
 .container {
   background: rgba(0, 0, 0, 0.453);
   padding-top: 15px;
@@ -95,4 +112,8 @@
   padding-right: 15px;
   border-radius: 15px;
   margin-top: 60px;
+}
+
+.bbtn{
+  visibility: hidden !important;
 }
