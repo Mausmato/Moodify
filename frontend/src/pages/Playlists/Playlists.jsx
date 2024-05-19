@@ -49,6 +49,11 @@ const Playlists = () => {
         <Heading align="center" className="heading-large">
           {displayedText}
         </Heading>
+
+          <button onClick={Login} id="loginButton">
+
+          </button>
+
         <iframe
           className="spotify-embed" // Apply the CSS class here
           src="https://open.spotify.com/embed/playlist/2HsrrjrXZZmHK2ASAVqX1Z?utm_source=generator&theme=0"

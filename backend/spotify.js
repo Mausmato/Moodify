@@ -53,15 +53,16 @@ app.get('/callback', async function(req, res) {
   } else {
     try {
       const data = await spotifyApi.authorizationCodeGrant(code);
-      accessToken = data.body['access_token'];
+      var access_token = body.access_token;
+        refresh_token = body.refresh_token;
       const refresh_token = data.body['refresh_token'];
 
-      spotifyApi.setAccessToken(accessToken);
+      spotifyApi.setaccessToken(access_token);
       spotifyApi.setRefreshToken(refresh_token);
 
       res.redirect('/#' +
         querystring.stringify({
-          access_token: accessToken,
+          access_token: access_token,
           refresh_token: refresh_token
         }));
     } catch (error) {
@@ -111,11 +112,12 @@ async function getRecommendations() {
       target_energy: arousal // Spotify uses 'target_energy' instead of 'target_arousal'
     })}`, {
       headers: {
-        Authorization: 'Bearer ' + access_token
+        Authorization: 'Bearer ' + accessToken
       }
     });
     
     const playlist = await response.json();
+    console.log(playlist);
     return playlist;
   } catch (error) {
     console.error('Error:', error);
@@ -123,17 +125,13 @@ async function getRecommendations() {
   }
 }
 
-async function main() {
-  const recommendations = await getRecommendations();
-  console.log(recommendations)
-}
+getRecommendations()
 
-app.get('/recommendations', async (req, res) => {
-  const recommendations = await getRecommendations();
-  console.log(recommendations)
-  res.json(recommendations);
-});
+// app.get('/recommendations', async (req, res) => {
+//   const recommendations = await getRecommendations();
+//   res.json(recommendations);
+// });
 
-app.listen(3000, function() {
-  console.log('Example app listening on port 3000!');
-});
+// app.listen(3000, function() {
+//   console.log('Example app listening on port 3000!');
+// });

@@ -34,3 +34,12 @@ a {
   border-color:#30A46C; /* color on hover */
   border-width: 2px;
 }
+
+#loginButton {
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #1db954;
+  font-family: "Poppins";
+}
