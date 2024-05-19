@@ -6,7 +6,7 @@ import {
 } from "../Constants/canvas.constant";
 
 const _setRectStyle = (context) => {
-  context.lineWidth = "3";
+  context.lineWidth = "1";
   context.strokeStyle = "white";
 };
 
@@ -39,7 +39,7 @@ const _drawPanel = (context, boundingBox) => {
   context.fillRect(x, y, width, SIZE_EMOTION_PANEL);
 };
 
-const _setFont = (context) => (context.font = SIZE_EMOTION_PANEL + "px serif");
+const _setFont = (context) => (context.font = SIZE_EMOTION_PANEL + "px poppins");
 
 const _drawText = (context, text, boundingBox) => {
   const { x, y, width } = _getRectDim(boundingBox, context);
