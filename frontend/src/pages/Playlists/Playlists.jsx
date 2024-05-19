@@ -17,10 +17,10 @@ const Playlists = () => {
         return () => clearTimeout(timeoutId);
       } else {
         setIsTyping(false);
-        setTimeout(() => {
-          setDisplayedText("");
-          setIsTyping(true);
-        }, 3000); // 3 seconds delay before restarting
+        // setTimeout(() => {
+        //   setDisplayedText("");
+        //   setIsTyping(true);
+        // }, 3000); // 3 seconds delay before restarting
       }
     }
   }, [displayedText, isTyping]);

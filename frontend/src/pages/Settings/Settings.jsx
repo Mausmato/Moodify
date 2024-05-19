@@ -16,10 +16,10 @@ const Settings = () => {
         return () => clearTimeout(timeoutId);
       } else {
         setIsTyping(false);
-        setTimeout(() => {
-          setDisplayedText("");
-          setIsTyping(true);
-        }, 3000); // 3 seconds delay before restarting
+        // setTimeout(() => {
+        //   setDisplayedText("");
+        //   setIsTyping(true);
+        // }, 3000); // 3 seconds delay before restarting
       }
     }
   }, [displayedText, isTyping]);
@@ -39,7 +39,7 @@ const Settings = () => {
       <div className="playlistcontainer">
         <Flex gap="8" direction="row" className="flex">
           <label className="txt">Automatically save playlists to Spotify</label>
-          <Switch className="btn" defaultChecked />
+          <Switch className="btn" defaultChecked={false} />
         </Flex>
       </div>
       <div className="playlistcontainer">
