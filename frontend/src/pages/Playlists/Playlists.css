@@ -53,11 +53,15 @@ a {
 .mainbtn {
   /* Set initial padding */
   padding: 10px !important;
+  background-color: #1CB955 !important;
+
   /* Apply transition for smooth animation */
   transition: padding 0.3s ease !important;
 }
 
 .mainbtn:hover {
+  background-color: #1CB955 !important;
+
   /* Increase padding on hover */
   padding: 20px !important;
 }
