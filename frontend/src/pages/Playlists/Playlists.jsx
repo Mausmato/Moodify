@@ -54,7 +54,7 @@ const Playlists = () => {
         </Heading>
         <iframe
           className="spotify-embed" // Apply the CSS class here
-          src="https://open.spotify.com/embed/playlist/0PzKm1C0ti5msFNWcHvXV1?utm_source=generator"
+          src="https://open.spotify.com/embed/playlist/2F6JtyDh4aHd77mfcxrz4R?utm_source=generator"
           width="600rem" // Set width to fill the container
           height="400"
           frameBorder="0"
@@ -88,7 +88,7 @@ const Playlists = () => {
         </Flex>
         <iframe
           className="spotify-embed" // Apply the CSS class here
-          src="https://open.spotify.com/embed/playlist/2F6JtyDh4aHd77mfcxrz4R?utm_source=generator"
+          src="https://open.spotify.com/embed/playlist/0PzKm1C0ti5msFNWcHvXV1?utm_source=generator"
           width="600rem" // Set width to fill the container
           height="400"
           frameBorder="0"
@@ -103,7 +103,7 @@ const Playlists = () => {
         </Flex>
         <iframe
           className="spotify-embed" // Apply the CSS class here
-          src="https://open.spotify.com/embed/playlist/6Twtullm379J957wfskhS6?utm_source=generator"
+          src="https://open.spotify.com/embed/playlist/7GHzJRQ9p6BErCmL0FENgV?utm_source=generator"
           width="600rem" // Set width to fill the container
           height="400"
           frameBorder="0"
