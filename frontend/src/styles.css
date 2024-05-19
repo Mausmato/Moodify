@@ -73,7 +73,7 @@ button {
   left: 50%;
   width: 300%;
   height: 300%; 
-  transform: translate(-470px, -290px); 
+  transform: translate(-470px, -330px); 
   pointer-events: none;
   border: none;
   background: none;
