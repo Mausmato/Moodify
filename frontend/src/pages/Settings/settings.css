@@ -11,6 +11,9 @@
 .playlistcontainer {
   margin-top: 60px;
 }
+.playlistcontainer2 {
+  margin-top: 60px;
+}
 
 .container {
   margin-top: 120px;
@@ -54,6 +57,29 @@
 
 .playlistcontainer {
   background: rgba(0, 0, 0, 0.453);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+}
+
+.playlistcontainer2 {
+  background: rgba(0, 0, 0, 0.453);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+}
+.playlistcontainer2 {
+  transition: background 0.3s ease-in-out, padding-top 0.3s ease-in-out, 
+              padding-bottom 0.3s ease-in-out, padding-left 0.3s ease-in-out, 
+              padding-right 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+.playlistcontainer2:hover {
+  background: rgba(255, 0, 0, 0.453);
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 15px;

@@ -61,8 +61,83 @@ const Playlists = () => {
         ></iframe>
         <Flex gap="4" justify="center">
           {/* Flex container for the first row of buttons */}
-          <Button className="bt1">Open in Spotify</Button>
-          <Button className="bt1">Delete Playlist from Library</Button>
+          <Button className="bt1">Share</Button>
+          <Button className="bt1">Delete from Library</Button>
+        </Flex>
+        <iframe
+          className="spotify-embed"
+          src="https://open.spotify.com/embed/playlist/37i9dQZF1DWWQRwui0ExPn?utm_source=generator"
+          width="600rem" // Set width to fill the container
+          height="400"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+        <Flex gap="4" justify="center">
+          {/* Flex container for the first row of buttons */}
+          <Button className="bt1">Share</Button>
+          <Button className="bt1">Delete from Library</Button>
+        </Flex>
+        <iframe
+          className="spotify-embed"
+          src="https://open.spotify.com/embed/playlist/0PzKm1C0ti5msFNWcHvXV1?utm_source=generator"
+          width="600rem" // Set width to fill the container
+          height="400"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+        <Flex gap="4" justify="center">
+          {/* Flex container for the first row of buttons */}
+          <Button className="bt1">Share</Button>
+          <Button className="bt1">Delete from Library</Button>
+        </Flex>
+        <iframe
+          className="spotify-embed"
+          src="https://open.spotify.com/embed/playlist/0XNeycwzq4GzLAYE3eUxcx?utm_source=generator"
+          width="600rem" // Set width to fill the container
+          height="400"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+        <Flex gap="4" justify="center">
+          {/* Flex container for the first row of buttons */}
+          <Button className="bt1">Share</Button>
+          <Button className="bt1">Delete from Library</Button>
+        </Flex>
+        <iframe
+          className="spotify-embed"
+          src="https://open.spotify.com/embed/playlist/2F6JtyDh4aHd77mfcxrz4R?utm_source=generator"
+          width="600rem" // Set width to fill the container
+          height="400"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+        <Flex gap="4" justify="center">
+          {/* Flex container for the first row of buttons */}
+          <Button className="bt1">Share</Button>
+          <Button className="bt1">Delete from Library</Button>
+        </Flex>
+        <iframe
+          className="spotify-embed"
+          src="https://open.spotify.com/embed/playlist/4PyBu7ruL74ERJ0NTg0sYD?utm_source=generator"
+          width="600rem" // Set width to fill the container
+          height="400"
+          frameBorder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+        ></iframe>
+        <Flex gap="4" justify="center">
+          {/* Flex container for the first row of buttons */}
+          <Button className="bt1">Share</Button>
+          <Button className="bt1">Delete from Library</Button>
         </Flex>
       </Flex>
     </motion.div>
