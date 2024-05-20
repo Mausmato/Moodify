@@ -1,7 +1,7 @@
 
 # Welcome to Moodify
 
-Moodify, a web-app build from reactjs, compiles your mood and generates Spotify playlists with knowladge to such info. 
+Moodify, a web-app build from reactjs, compiles your mood and generates Spotify playlists with knowledge to such info. 
 ## Roadmap
 
 - Additional application support
