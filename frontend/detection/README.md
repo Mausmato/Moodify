@@ -3,7 +3,7 @@
 [![reactjs](badges/react.svg)](https://en.reactjs.org)
 [![javascript](badges/javascript.svg)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 
-facial emotion recognition AI used in a website made with React
+facial emotion recognition AI used in a website made with ReactJS
 
 ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
 
