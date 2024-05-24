@@ -8,10 +8,14 @@ import { TabNav } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 import "./index.css"; // Import the CSS file
 import Logo from "./MoodifyLogo.png";
+import { createContext } from "react";
+import { useState } from "react";
+import { EmotionProvider } from "./contexts/EmotionContext.jsx";
 
 function App() {
+
   return (
-    <>
+    <EmotionProvider>
       <div className="navbar">
         <TabNav.Root className="nav-left">
           <TabNav.Link active>
@@ -35,7 +39,7 @@ function App() {
         <Route path="/playlists" element={<Playlists />} />
         <Route path="/settings" element={<Settings />} />
       </Routes>
-    </>
+    </EmotionProvider>
   );
 }
 

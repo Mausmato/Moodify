@@ -1,4 +1,4 @@
-import { predict } from "./tensorflowPredictions";
+import { predict } from "./tensorflowPredictions.jsx";
 import {
   EMOTION_PANEL_BG_COLOR,
   EMOTION_PANEL_COLOR,
